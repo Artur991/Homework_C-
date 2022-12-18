@@ -2,22 +2,17 @@
 // и выдаёт сумму цифр в числе, которые являются делителями этого числа
 Console.WriteLine ("Введите число");
 int number = Convert.ToInt32(Console.ReadLine());
-int sum = 0;
+double sum = 0;
 string str_number = Convert.ToString(number);
 List<int> list = new List<int>();
 char[] arr = str_number.ToCharArray();
 for(int i = 0; i< arr.Length; i++)
 {
         list.Add(Int32.Parse(new String(arr[i], 1)));              
-        int x = Convert.ToInt32(list[i]);
-        if (x == 0)
+        double x = Convert.ToInt32(list[i]);
+        if (number % x == 0)
         {
-                x=1;
-        }
-        else if (number % x == 0)
-        {
-                sum +=x;
-                   
+                sum +=x;                
         }
                 
         }
