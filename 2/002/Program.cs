@@ -3,7 +3,7 @@
 //или сообщает, что третьей цифры нет. 
 
 Console.WriteLine("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine());
+// int n = Convert.ToInt32(Console.ReadLine());
 //вариант 1
 string n = Console.ReadLine();
 if (n.Length  > 2)
