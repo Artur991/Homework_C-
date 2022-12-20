@@ -43,7 +43,7 @@ void PrintDoubleArray(double[] Random) //Заполнение массива
 //  Console.WriteLine(String.Format("Минимальный элимент массива: [ {0:00.00} ]",min));
 //  Console.WriteLine(String.Format("Максимальный элимент массива: [ {0:00.00} ]",max));
 // }
-void ShowDifference(double[] Random) //Разница между минимальным и максимальным элеменнтом массива
+void ShowDifferenceMinMax(double[] Random) //Разница между минимальным и максимальным элеменнтом массива
 {
 double FindMinNumber = Random[0];
 double FindMaxNumber = Random[0];
@@ -77,4 +77,4 @@ Console.WriteLine();
 Console.WriteLine("Полученый одномерный массив случайных чисел: ");
 PrintDoubleArray(Random);
 // FindMinAndMax(Random);
-ShowDifference(Random);
+ShowDifferenceMinMax(Random);
