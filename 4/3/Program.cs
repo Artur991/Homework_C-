@@ -5,7 +5,7 @@ Console.WriteLine("Введите размер массива: ");
 int N = Convert.ToInt32(Console.ReadLine());
 int [] Random = new int [N];
 
-void FillArrayRandomNumbers(int[] Random) // Генерация случайных интересных чисел
+void FillArrayRandomIntrestingNumbers(int[] Random) // Генерация случайных интересных чисел
 {
     int sum = 0;
     int proizvedenie = 0;
@@ -28,7 +28,7 @@ void FillArrayRandomNumbers(int[] Random) // Генерация случайны
     }
 }
 
-void PrintArray(int[] Random) // Заполнение массива  
+void PrintIntrestingArray(int[] Random) // Заполнение массива  
 {
 
     Console.Write("[ ");
@@ -39,8 +39,6 @@ void PrintArray(int[] Random) // Заполнение массива
     Console.Write("]");
     Console.WriteLine();
 }
-
-
 
 FillArrayRandomIntrestingNumbers(Random);
 PrintIntrestingArray(Random);
