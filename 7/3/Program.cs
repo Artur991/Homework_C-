@@ -53,6 +53,8 @@ void SumPolindromArray(int [,] arr)
     int temp = 0;
     string temp2 = string.Empty;
     int temp3 = 0; 
+    int count = 0;
+    double SrArif = 0;
     for(int j = 0; j < arr.GetLength(1); j++)
     {
         temp = arr[i,j];
@@ -61,15 +63,18 @@ void SumPolindromArray(int [,] arr)
       {
         temp3 = Convert.ToInt32(temp2);
         sum = sum + temp3;    
+        count++;
+        if (count > 0)
+        {
+        SrArif = sum/count;
+        }
         }   
     }
-    Console.Write("{0} ", sum);
+    Console.Write("{0:N2} ", SrArif);
 }  
 Console.Write("}");
 Console.WriteLine(); 
 }  
-
-
 
 FillArray(arr);
 PrintArray(arr);
