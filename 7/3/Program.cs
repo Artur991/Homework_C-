@@ -49,12 +49,12 @@ void SumPolindromArray(int [,] arr)
     Console.Write(" {");
     for(int i = 0; i < arr.GetLength(0); i++)
     {
-    int sum = 0;
-    int temp = 0;
+    int sum = 0;  // сумма найденных палиндромов
+    int temp = 0; // для конвертации элемента в строку
     string temp2 = string.Empty;
-    int temp3 = 0; 
-    int count = 0;
-    double SrArif = 0;
+    int temp3 = 0; // для хранения найденого палиндрома
+    int count = 0; // счетчик количества палиндромов в столбце
+    double SrArif = 0; // среднее арефметическое
     for(int j = 0; j < arr.GetLength(1); j++)
     {
         temp = arr[i,j];
@@ -64,10 +64,10 @@ void SumPolindromArray(int [,] arr)
         temp3 = Convert.ToInt32(temp2);
         sum = sum + temp3;    
         count++;
-        if (count > 0)
-        {
-        SrArif = sum/count;
-        }
+            if (count > 0)
+            {
+                SrArif = sum/count;
+            }
         }   
     }
     Console.Write("{0:N2} ", SrArif);
