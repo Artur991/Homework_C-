@@ -73,8 +73,8 @@ void SumNoun(int [,] arr)
         // temp3 += temp3; 
         // Console.WriteLine("Сумма2:  {0}", temp3);   
     }
-    Console.WriteLine("Cумму произведений пар чисел массива:  {0}", sum);
+    Console.WriteLine("Cумму :  {0}", sum);
 }  
-// Console.WriteLine("Cумму произведений пар чисел массива:  {0}", sum);
+// Console.WriteLine("Cумму :  {0}", sum);
 }  
 
