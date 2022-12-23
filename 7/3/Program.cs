@@ -75,28 +75,3 @@ FillArray(arr);
 PrintArray(arr);
 SumPolindromArray(arr);
 
-// // void SumPolindromArray(int [,] arr)
-// {
-//     Console.Write("Полученный маассив средних арефметических по столбцам {");
-//     for(int i = 0; i < arr.GetLength(0); i++)
-//     {
-//     int sum = 0;
-//     int temp = 0;
-//     string temp2 = string.Empty;
-//     int temp3 = 0; 
-//     for(int j = 0; j < arr.GetLength(1); j++)
-//     {
-//         temp = arr[i,j];
-//         temp2 = Convert.ToString(temp);
-//       if (temp2[0] == temp2[2])    // проверка на палиндром
-//       {
-//         temp3 = Convert.ToInt32(temp2);
-//         sum = sum + temp3;    
-//         }   
-//     }
-//     Console.Write("{0}, ", sum);
-// }  
-// Console.Write("}");
-// Console.WriteLine(); 
-// }  
-
