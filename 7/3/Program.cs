@@ -51,6 +51,7 @@ PrintArray(arr);
 
 void SumNoun(int [,] arr)
 {
+    Console.Write("{");
     for(int i = 0; i < arr.GetLength(0); i++)
     {
     int sum = 0;
@@ -65,16 +66,16 @@ void SumNoun(int [,] arr)
       {
         temp3 = Convert.ToInt32(temp2);
         sum = sum + temp3;
-        arr[i,j] = temp3;
+        // arr[i,j] = temp3;
         // temp3 += temp3; 
-        Console.WriteLine("палиндромы:  {0}", arr[i,j]);
-        Console.WriteLine("Сумма:  {0}", sum);      
-        }  
-        // temp3 += temp3; 
-        // Console.WriteLine("Сумма2:  {0}", temp3);   
+        // Console.WriteLine("палиндромы:  {0}", arr[i,j]);
+        // Console.WriteLine("Сумма:  {0}", sum);    
+        }   
     }
-    Console.WriteLine("Cумму :  {0}", sum);
+    Console.Write("{0}, ", sum);
 }  
+Console.Write("}");
+Console.WriteLine(); 
 // Console.WriteLine("Cумму :  {0}", sum);
 }  
 
