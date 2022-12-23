@@ -43,15 +43,10 @@ void PrintArray(int[,] arr)
     Console.WriteLine();
 }
 
-
-FillArray(arr);
-PrintArray(arr);
-SumNoun(arr);
-PrintArray(arr);
-
-void SumNoun(int [,] arr)
+void SumPolindromArray(int [,] arr)
 {
-    Console.Write("{");
+    Console.WriteLine("Полученный маассив средних арефметических по столбцам: ");
+    Console.Write(" {");
     for(int i = 0; i < arr.GetLength(0); i++)
     {
     int sum = 0;
@@ -65,17 +60,43 @@ void SumNoun(int [,] arr)
       if (temp2[0] == temp2[2])    // проверка на палиндром
       {
         temp3 = Convert.ToInt32(temp2);
-        sum = sum + temp3;
-        // arr[i,j] = temp3;
-        // temp3 += temp3; 
-        // Console.WriteLine("палиндромы:  {0}", arr[i,j]);
-        // Console.WriteLine("Сумма:  {0}", sum);    
+        sum = sum + temp3;    
         }   
     }
-    Console.Write("{0}, ", sum);
+    Console.Write("{0} ", sum);
 }  
 Console.Write("}");
 Console.WriteLine(); 
-// Console.WriteLine("Cумму :  {0}", sum);
 }  
+
+
+
+FillArray(arr);
+PrintArray(arr);
+SumPolindromArray(arr);
+
+// // void SumPolindromArray(int [,] arr)
+// {
+//     Console.Write("Полученный маассив средних арефметических по столбцам {");
+//     for(int i = 0; i < arr.GetLength(0); i++)
+//     {
+//     int sum = 0;
+//     int temp = 0;
+//     string temp2 = string.Empty;
+//     int temp3 = 0; 
+//     for(int j = 0; j < arr.GetLength(1); j++)
+//     {
+//         temp = arr[i,j];
+//         temp2 = Convert.ToString(temp);
+//       if (temp2[0] == temp2[2])    // проверка на палиндром
+//       {
+//         temp3 = Convert.ToInt32(temp2);
+//         sum = sum + temp3;    
+//         }   
+//     }
+//     Console.Write("{0}, ", sum);
+// }  
+// Console.Write("}");
+// Console.WriteLine(); 
+// }  
 
