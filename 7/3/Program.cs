@@ -15,7 +15,7 @@ Console.WriteLine("Введите количество столбцов масс
 int columcount = Convert.ToInt32(Console.ReadLine());
 
 int [,] arr = new int [rowcount, columcount] ;  // 1
-
+// double [] SrArif = new double [rowcount];
 void FillArray(int[,] arr)          // 2
 {
     for(int i = 0; i < arr.GetLength(0); i++)
@@ -43,10 +43,40 @@ void PrintArray(int[,] arr)
     Console.WriteLine();
 }
 
+// void SumPolindromArray(int [,] arr)
+// {
+//     Console.WriteLine("Полученный маассив средних арефметических по столбцам: ");
+//     Console.Write(" [");
+//     for(int i = 0; i < arr.GetLength(0); i++)
+//     {
+//     int sum = 0;  // сумма найденных палиндромов
+//     int temp = 0; // для конвертации элемента в строку
+//     string temp2 = string.Empty;
+//     int temp3 = 0; // для хранения найденого палиндрома
+//     int count = 0; // счетчик количества палиндромов в столбце
+//     double SrArif = 0; // среднее арефметическое
+//     for(int j = 0; j < arr.GetLength(1); j++)
+//     {
+//         temp = arr[i,j];
+//         temp2 = Convert.ToString(temp);
+//       if (temp2[0] == temp2[2])    // проверка на палиндром
+//       {
+//         temp3 = Convert.ToInt32(temp2);
+//         sum = sum + temp3;    
+//         count++;
+//             if (count > 0)
+//             {
+//                 SrArif = sum/count;
+//             }
+//         }   
+//     }
+//     Console.Write("{0:N2} ", SrArif);
+// }  
+
 void SumPolindromArray(int [,] arr)
 {
     Console.WriteLine("Полученный маассив средних арефметических по столбцам: ");
-    Console.Write(" {");
+    Console.Write(" [");
     for(int i = 0; i < arr.GetLength(0); i++)
     {
     int sum = 0;  // сумма найденных палиндромов
@@ -68,11 +98,15 @@ void SumPolindromArray(int [,] arr)
             {
                 SrArif = sum/count;
             }
+            
         }   
-    }
+    
+    }    
     Console.Write("{0:N2} ", SrArif);
+    // return SrArif;
 }  
-Console.Write("}");
+
+Console.Write("]");
 Console.WriteLine(); 
 }  
 
