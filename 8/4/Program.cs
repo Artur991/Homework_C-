@@ -13,7 +13,7 @@
 
 
 
-Console.WriteLine("Создание двумерного массива.  Количество строк массива: ");
+Console.WriteLine("Создание двумерного массива.   Количество строк массива: ");
 int rowcount = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Количество столбцов массива: ");
 int columcount = Convert.ToInt32(Console.ReadLine());
