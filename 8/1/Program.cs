@@ -10,13 +10,13 @@
 // 9 5 3 2
 // 8 4 4 2
 
-Console.WriteLine("Создание двумерного массива.   Количество строк массива: ");
+Console.WriteLine("Создание двумерного массива. ");
+Console.Write("Введите количество строк массива:  ");
 int rowcount = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Количество столбцов массива: ");
+Console.WriteLine("Введите количество столбцов массива: ");
 int columcount = Convert.ToInt32(Console.ReadLine());
 
 int [,] arr = new int [rowcount, columcount] ;
-
 
 void FillArray(int[,] arr)          
 {
@@ -46,7 +46,6 @@ void PrintArray(int[,] arr)
     Console.WriteLine();
 }
 
-
 void PrintSortArray(int[,] arr)
 {
     
@@ -71,7 +70,12 @@ void PrintSortArray(int[,] arr)
     }  
 }
 
-
 FillArray(arr);
+Console.WriteLine("Получаем массив заданого размера, со случайными цифрами:  ");
+Console.WriteLine();
 PrintArray(arr);
+Console.WriteLine("Для начала сортировки элементов массива по строкам нажмите Enter:  ");
+Console.ReadLine();
+Console.WriteLine("Получаем массив:  ");
+Console.WriteLine();
 PrintSortArray(arr);
