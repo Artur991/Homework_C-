@@ -17,7 +17,6 @@ int columcount = Convert.ToInt32(Console.ReadLine());
 
 int [,] arr = new int [rowcount, columcount] ;
 
-
 void FillArray(int[,] arr)          
 {
     for(int i = 0; i < arr.GetLength(0); i++)
@@ -46,23 +45,8 @@ void PrintArray(int[,] arr)
     Console.WriteLine();
 }
 
-void SumPolindromArray(int [,] arr) /////////////////////
-    {
-        int minSumLine = 0;
-int sumLine = SumLineElements(arr, 0);
-for (int i = 1; i < arr.GetLength(0); i++)
-{
-  int tempSumLine = SumLineElements(arr, i);
-  if (sumLine > tempSumLine)
-  {
-    sumLine = tempSumLine;
-    minSumLine = i;
-  }
-}
-Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
-    }
 
-int SumLineElements(int[,] array, int i)  /////////////////
+int SumLineElements(int[,] array, int i)  
 {
   int sumLine = array[i,0];
   for (int j = 1; j < array.GetLength(1); j++)
@@ -72,6 +56,42 @@ int SumLineElements(int[,] array, int i)  /////////////////
   return sumLine;
 }
 
+
+void FindRowWithMinSum(int [,] arr) 
+{
+  int sumLine = SumLineElements(arr, 0);
+  for (int i = 0; i < arr.GetLength(0); i++)
+  {
+    Console.WriteLine(" Строка № {0}, сумма ее элементов {1}", i+1, SumLineElements(arr, i));
+  }
+}
+
+void ShowRowWithMinSum(int [,] arr) 
+{
+  int minSumLine = 0;
+  int sumLine = SumLineElements(arr, 0);
+  for (int i = 0; i < arr.GetLength(0); i++)
+  {
+    int tempSumLine = SumLineElements(arr, i);
+    if (sumLine > tempSumLine)
+    {
+      sumLine = tempSumLine;
+      minSumLine = i;
+    } 
+}
+Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
+    }
+
+
+
+
 FillArray(arr);
+Console.WriteLine("Получаем массив заданого размера, со случайными цифрами:  ");
 PrintArray(arr);
-SumPolindromArray(arr);
+Console.WriteLine("Ввывод строк с суммой элементов:  ");
+Console.ReadLine();
+FindRowWithMinSum(arr);
+Console.WriteLine();
+Console.WriteLine("Для поиска строк с наименьшей суммой элементов нажмите Enter:  ");
+Console.ReadLine();
+ShowRowWithMinSum(arr);
