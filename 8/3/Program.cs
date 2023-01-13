@@ -7,95 +7,66 @@
 // 18 20
 // 15 18
 
-static class MatrixExt
+Console.WriteLine("Создание Матрицы A. Количество строк: ");
+int rowcountA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Количество столбцов Матрицы A: ");
+int columcountA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Создание Матрицы B.   Количество строк: ");
+int rowcountB = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Количество столбцов Матрицы B: ");
+int columcountB = Convert.ToInt32(Console.ReadLine());
+
+int[,] A = new int[rowcountA, columcountA];
+int[,] B = new int[rowcountB, columcountB];
+
+void FillArray(int[,] array)          
 {
-    // метод расширения для получения количества строк матрицы
-    public static int RowsCount(this int[,] matrix)
+    for(int i = 0; i < array.GetLength(0); i++)
     {
-        return matrix.GetUpperBound(0) + 1;
-    }
-
-    // метод расширения для получения количества столбцов матрицы
-    public static int ColumnsCount(this int[,] matrix)
-    {
-        return matrix.GetUpperBound(1) + 1;
-    }   
-}
-
-class Program
-{
-    // метод для получения матрицы из консоли
-    static int[,] GetMatrixFromConsole(string name)
-    {
-        Console.Write("Количество строк матрицы {0}:    ", name);
-        var n = int.Parse(Console.ReadLine());
-        Console.Write("Количество столбцов матрицы {0}: ", name);
-        var m = int.Parse(Console.ReadLine());
-
-        var matrix = new int[n, m];
-        for (var i = 0; i < n; i++)
+        for(int j = 0; j < array.GetLength(1); j++)
         {
-            for (var j = 0; j < m; j++)
-            {
-                matrix[i, j] = new Random().Next(1,10); ;
-            }
+        array[i,j] = new Random().Next(1,10); 
         }
-
-        return matrix;
     }
+}    
 
-    // метод для печати матрицы в консоль
-    static void PrintMatrix(int[,] matrix)
+static void PrintArray(int[,] array)
     {
-        for (var i = 0; i < matrix.RowsCount(); i++)
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            for (var j = 0; j < matrix.ColumnsCount(); j++)
+            for (int j = 0; j < array.GetLength(1); j++)
             {
-                Console.Write(matrix[i, j].ToString().PadLeft(4));
+                Console.Write("{0} ", array[i, j]);
             }
-
             Console.WriteLine();
         }
     }
-
-    // метод для умножения   матриц
-    static int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
-    {       
-        var matrixC = new int[matrixA.RowsCount(), matrixB.ColumnsCount()];
-
-        for (var i = 0; i < matrixA.RowsCount(); i++)
+    
+static int[,] Multiplication(int[,] array, int[,] array2)
+    {
+        if (array.GetLength(1) != array2.GetLength(0)) throw new Exception("Матрицы нельзя перемножить");
+        int[,] r = new int[array.GetLength(0), array2.GetLength(1)];
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            for (var j = 0; j < matrixB.ColumnsCount(); j++)
+            for (int j = 0; j < array2.GetLength(1); j++)
             {
-                matrixC[i, j] = 0;
-
-                for (var k = 0; k < matrixA.ColumnsCount(); k++)
+                for (int k = 0; k < array2.GetLength(0); k++)
                 {
-                    matrixC[i, j] += matrixA[i, k] * matrixB[k, j];
+                    r[i,j] += array[i,k] * array2[k,j];
                 }
             }
         }
-
-        return matrixC;
+    return r;
     }
 
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Программа для умножения матриц");
-
-        var a = GetMatrixFromConsole("A");
-        var b = GetMatrixFromConsole("B");
-
-        Console.WriteLine("Матрица A:");
-        PrintMatrix(a);
-
-        Console.WriteLine("Матрица B:");
-        PrintMatrix(b);
-
-        var result = MatrixMultiplication(a, b);
-        Console.WriteLine("Произведение матриц:");
-        PrintMatrix(result);
-
-        Console.ReadLine();
-    }
-}
+FillArray(A);
+FillArray(B);
+Console.WriteLine("Матрица первая: ");
+PrintArray(A);
+Console.WriteLine();
+Console.WriteLine("Матрица вторая: ");
+PrintArray(B);
+Console.WriteLine();
+Console.WriteLine("Произведение матриц: ");
+int[,] C = Multiplication(A, B);
+PrintArray(C);
