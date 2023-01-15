@@ -7,56 +7,53 @@
 // 10 09 08 07
 
 
-Console.WriteLine("");
+Console.WriteLine("Введите размерность массива");
+int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите размерность массива");
+// int s = Convert.ToInt32(Console.ReadLine());
+int number = 1;
+double [,] Array = new double [n,n];
+// const n = 4;
 
-int [,] array = new int [4,4];
-// double [,] array = new double [4,4];
-
-// void FillArray(double[,] arr)
+// for (int i = 0; i < n; i++)
 // {
-//     Random random = new Random();
-//         for(int i = 0; i < arr.GetLength(0); i++)
+//     for (int j = 0; j < n; j++)
 //     {
-//         for(int j = 0; j < arr.GetLength(1); j++)
-//         {
-//         arr[i,j] = random.Next(01,15);    
-//         }
-   
+//         Console.Write(String.Format("{0:00}  ", + Array[i,j]));
 //     }
-// }
-
-// void PrintArray(double[,] arr)
-// {
-    
-//     for(int i = 0; i < arr.GetLength(0); i++)
-//     {
-//         Console.Write("{ ");
-//         for(int j = 0; j < arr.GetLength(1); j++)
-//         {
-//             Console.Write(String.Format("{0:N2}  ", + arr[i,j]));
-//         }
-//         Console.Write("}");
-//         Console.WriteLine();
-//     }
-    
 //     Console.WriteLine();
 // }
 
-void FillArray(int[,] arr)
-{
-        for(int i = 0; i < arr.GetLength(1); i++)
-    {
-         arr[0,i] += i+1;
-    }
-    for(int j = 0; j < arr.GetLength(0); j++)
-    {
-        arr[j,arr.GetLength(0)-1] += j;
 
+    // for (int i =0; i < n / 2; i++)
+    // {
+    //     for (int j =i; j < n -i; j++)
+    //         Array[i][j] = number++;
+    //     for (int k = i + 1; k < n - i; k++)
+    //         Array[k][n-1-i] = number++;
+    //     for (int j = n-i - 2; j >= i; j--)
+    //         Array[n-1-i][j] = number++;
+    //     for (int k = n-1-i; k > i; k--)
+    //         Array[k][i] = number++;
+    // }
+
+
+void FillArray(double[,] arr)
+{
+     for (int i =0; i < n / 2; i++)
+    {
+        for (int j =i; j < n -i; j++)
+            Array[i,j] = number++;
+        for (int k = i + 1; k < n - i; k++)
+            Array[k,n-1-i] = number++;
+        for (int j = n-i - 2; j >= i; j--)
+            Array[n-1-i,j] = number++;
+        for (int k = n-1-i; k > i; k--)
+            Array[k,i] = number++;
     }
-   
 }
 
-void PrintArray(int[,] arr)
+void PrintArray(double[,] arr)
 {
     
     for(int i = 0; i < arr.GetLength(0); i++)
@@ -73,5 +70,5 @@ void PrintArray(int[,] arr)
     Console.WriteLine();
 }
 
-FillArray(array);
-PrintArray(array);
+FillArray(Array);
+PrintArray(Array);
