@@ -9,46 +9,20 @@
 
 Console.WriteLine("Введите размерность массива");
 int n = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите размерность массива");
-// int s = Convert.ToInt32(Console.ReadLine());
 int number = 1;
 double [,] Array = new double [n,n];
-// const n = 4;
-
-// for (int i = 0; i < n; i++)
-// {
-//     for (int j = 0; j < n; j++)
-//     {
-//         Console.Write(String.Format("{0:00}  ", + Array[i,j]));
-//     }
-//     Console.WriteLine();
-// }
-
-
-    // for (int i =0; i < n / 2; i++)
-    // {
-    //     for (int j =i; j < n -i; j++)
-    //         Array[i][j] = number++;
-    //     for (int k = i + 1; k < n - i; k++)
-    //         Array[k][n-1-i] = number++;
-    //     for (int j = n-i - 2; j >= i; j--)
-    //         Array[n-1-i][j] = number++;
-    //     for (int k = n-1-i; k > i; k--)
-    //         Array[k][i] = number++;
-    // }
-
 
 void FillArray(double[,] arr)
 {
      for (int i =0; i < n / 2; i++)
     {
-        for (int j =i; j < n -i; j++)
+        for (int j = i; j < n - i; j++)
             Array[i,j] = number++;
         for (int k = i + 1; k < n - i; k++)
-            Array[k,n-1-i] = number++;
-        for (int j = n-i - 2; j >= i; j--)
-            Array[n-1-i,j] = number++;
-        for (int k = n-1-i; k > i; k--)
+            Array[k, n - 1 - i] = number++;
+        for (int j = n - i - 2; j >= i; j--)
+            Array[n - 1 - i, j] = number++;
+        for (int k = n - i - 2; k > i; k--)
             Array[k,i] = number++;
     }
 }
@@ -58,12 +32,10 @@ void PrintArray(double[,] arr)
     
     for(int i = 0; i < arr.GetLength(0); i++)
     {
-        Console.Write("{ ");
         for(int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write(String.Format("{0:00}  ", + arr[i,j]));
+            Console.Write(String.Format("{0:00} ", + arr[i,j]));
         }
-        Console.Write("}");
         Console.WriteLine();
     }
     
