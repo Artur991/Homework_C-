@@ -14,7 +14,7 @@ double [,] Array = new double [n,n];
 
 void FillArray(double[,] arr)
 {
-     for (int i =0; i < n / 2; i++)
+     for (int i =0; i < n / 2 + 1; i++)
     {
         for (int j = i; j < n - i; j++)
             Array[i,j] = number++;
@@ -29,7 +29,6 @@ void FillArray(double[,] arr)
 
 void PrintArray(double[,] arr)
 {
-    
     for(int i = 0; i < arr.GetLength(0); i++)
     {
         for(int j = 0; j < arr.GetLength(1); j++)
@@ -38,7 +37,6 @@ void PrintArray(double[,] arr)
         }
         Console.WriteLine();
     }
-    
     Console.WriteLine();
 }
 
